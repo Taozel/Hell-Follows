@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyHealth : MonoBehaviour
 {
     public float value = 100;
-    public float Enemy;
+    private float Enemy;
     public Animator animator;
 
     public void Start()
