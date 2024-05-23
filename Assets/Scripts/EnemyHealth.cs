@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyHealth : MonoBehaviour
 {
     public float value = 100;
-
+    public float Enemy;
     public Animator animator;
 
     public void Start()
@@ -28,10 +28,15 @@ public class EnemyHealth : MonoBehaviour
     
     private void EnemyDeath()
     {
-        animator.SetTrigger("death");
+        animator.SetTrigger("death");     
         GetComponent<EnemyAI>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<CapsuleCollider>().enabled = false;
+    }
+
+    public void Death()
+    {
+        Destroy(gameObject);
     }
 
 

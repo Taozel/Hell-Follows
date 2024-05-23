@@ -27,7 +27,7 @@ public class EnemyAI : MonoBehaviour
 
     public void EnemyAttack()
     {
-        Debug.Log("ZOV");
+        _playerHealth.DealDamage(damage * Time.deltaTime);
     }
 
     private void Update()
@@ -45,7 +45,6 @@ public class EnemyAI : MonoBehaviour
             if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
             {
                 animator.SetTrigger("attack");
-                _playerHealth.DealDamage(damage * Time.deltaTime);
             }
         }
     }

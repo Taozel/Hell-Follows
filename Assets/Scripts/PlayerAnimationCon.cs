@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAnimationCon : MonoBehaviour
 {
     private float relodeTime = 1;
-    private float relodeTimeUlt = 10;
+    private float relodeTimeUlt = 25;
     private bool _canHit = true;
     private bool _canHitUlt = true;
     public Animator anim;

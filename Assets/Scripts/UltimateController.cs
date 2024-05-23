@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class UltimateController : MonoBehaviour
 {
-    private float relodeTime = 10;
+    private float UltimateTime = 3;
+    private float ReloadTime = 25;
     private bool _canHit = true;
+    private bool _x = false;
     public MeshCollider coll;
     public float damage = 100;
     public bool isAttak;
@@ -16,27 +18,29 @@ public class UltimateController : MonoBehaviour
     }
 
     private void Update()
-    {
+    {       
         if (_canHit == false)
         {
             coll.enabled = true;
         }
 
-        if (_canHit == true)
+        if (_x == true)
         {
             coll.enabled = false;
-
         }
         if (Input.GetKey(KeyCode.G) && _canHit == true)
         {
-            StartCoroutine(Reload());
+            StartCoroutine(UltCast());            
         }
 
-        IEnumerator Reload()
+        IEnumerator UltCast()
         {
             _canHit = false;
-            yield return new WaitForSeconds(relodeTime);
+            yield return new WaitForSeconds(UltimateTime);
+            _x = true;
+            yield return new WaitForSeconds(ReloadTime);            
             _canHit = true;
+            _x = false;
         }
     }
 
