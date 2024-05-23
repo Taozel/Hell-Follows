@@ -7,6 +7,8 @@ public class PlayerHealth : MonoBehaviour
     public float value = 100;
     public RectTransform valueRectTransform;
 
+    public Animator animator;
+
     public GameObject gameplayUI;
     public GameObject gameOverScreen;
 
@@ -40,9 +42,8 @@ public class PlayerHealth : MonoBehaviour
         gameplayUI.SetActive(false);
         gameOverScreen.SetActive(true);
         GetComponent<PlayerControllerr>().enabled = false;
-        GetComponent<PlayerAnimationCon>().enabled = false;
-        GetComponent<UltimateController>().enabled = false;
-        GetComponent<AttakController>().enabled = false;
+        animator.SetTrigger("death");
+
     }
 
     private void DrawHealthBar()

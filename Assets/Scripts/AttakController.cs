@@ -11,6 +11,8 @@ public class AttakController : MonoBehaviour
     public float damage = 25;
     public bool isAttak;
 
+   
+
     private void Start()
     {
         coll.enabled = false;

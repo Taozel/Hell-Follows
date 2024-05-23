@@ -8,6 +8,7 @@ public class EnemyAI : MonoBehaviour
     public PlayerControllerr player;
     public float viewAngle;
     public float damage = 30;
+    public Animator animator;
 
     private NavMeshAgent _navMeshAgent;
     private bool _isPlayerNoticed;
@@ -24,6 +25,11 @@ public class EnemyAI : MonoBehaviour
         _playerHealth = player.GetComponent<PlayerHealth>();
     }
 
+    public void EnemyAttack()
+    {
+        Debug.Log("ZOV");
+    }
+
     private void Update()
     {
         NoticePlayerUpdate();
@@ -38,6 +44,7 @@ public class EnemyAI : MonoBehaviour
         {
             if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
             {
+                animator.SetTrigger("attack");
                 _playerHealth.DealDamage(damage * Time.deltaTime);
             }
         }
