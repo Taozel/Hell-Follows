@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public float value = 100;
     private float Enemy;
     public Animator animator;
+    private  bool isDead = false;
 
     public void Start()
     {
@@ -15,6 +16,8 @@ public class EnemyHealth : MonoBehaviour
 
     public void DealDamage(float damage)
     {
+        if (isDead) return;
+
         value -= damage;
         if (value <= 0)
         {
@@ -28,6 +31,7 @@ public class EnemyHealth : MonoBehaviour
     
     private void EnemyDeath()
     {
+        isDead = true;
         animator.SetTrigger("death");     
         GetComponent<EnemyAI>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;

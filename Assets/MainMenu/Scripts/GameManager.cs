@@ -3,6 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    //[SerializeField] private Material skybox;
+
+    private void Start()
+    {
+        //if (skybox != null) SetSkyBox();
+    }
+
     public void Quit()
     {
         Application.Quit();
@@ -14,5 +21,11 @@ public class GameManager : MonoBehaviour
     public void QuitMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    private void SetSkyBox()
+    {
+        //RenderSettings.skybox = skybox;
+        //DynamicGI.UpdateEnvironment();
     }
 }
