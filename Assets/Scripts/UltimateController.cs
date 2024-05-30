@@ -38,10 +38,21 @@ public class UltimateController : MonoBehaviour
             _canHit = false;
             yield return new WaitForSeconds(UltimateTime);
             _x = true;
-            yield return new WaitForSeconds(ReloadTime);            
+            StartCoroutine(UltCastt());
+        }
+
+        IEnumerator UltCastt()
+        {
+            yield return new WaitForSeconds(ReloadTime);
             _canHit = true;
             _x = false;
         }
+
+
+
+
+
+
     }
 
     private void OnCollisionEnter(Collision collision)

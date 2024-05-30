@@ -13,6 +13,13 @@ public class Cont : MonoBehaviour
         canvas.enabled = false;
     }
 
+    public void Resume()
+    {
+        canvas.enabled = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1f;
+    }
 
     void Update()
     {
@@ -21,6 +28,7 @@ public class Cont : MonoBehaviour
             canvas.enabled = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            Time.timeScale = 0f;        
         }      
     }
 }

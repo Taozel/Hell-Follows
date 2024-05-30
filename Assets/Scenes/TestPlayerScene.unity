@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657952, g: 0.49641317, b: 0.57481825, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657975, g: 0.49641365, b: 0.5748181, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -737,7 +737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f769664acbeb84c86ff1ea2f072d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skybox: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  x: 1
 --- !u!4 &735582688
 Transform:
   m_ObjectHideFlags: 0
@@ -785,6 +785,8 @@ MonoBehaviour:
   offsetPos: {x: -4, y: 4, z: -4}
   moveSpeed: 20
   smooth: 0
+  WallsTag: 
+  cam: {fileID: 963194227}
 --- !u!4 &812541533
 Transform:
   m_ObjectHideFlags: 0
@@ -882,9 +884,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 927053640}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1553896784}
+        m_MethodName: Resume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1397,7 +1399,7 @@ GameObject:
   - component: {fileID: 1553896785}
   - component: {fileID: 1553896784}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Cont
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

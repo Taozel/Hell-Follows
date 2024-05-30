@@ -34,18 +34,18 @@ public class CameraFollowTarget : MonoBehaviour
     private void Update()
     {
         HideWall();
-        Debug.Log("Update");
+
     }
 
     private void HideWall()
     {
-        Debug.Log("HideWall");
+
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
             var go = hit.collider.gameObject;
-            Debug.Log(go.tag);
+
             if (go.tag == WallsTag)
             {
                 go.GetComponent<MeshRenderer>().enabled = false;
